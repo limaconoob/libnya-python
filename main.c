@@ -6,12 +6,13 @@
 
 int main(void)
 { void* bundle = dlopen("libnya-python.dylib", RTLD_LAZY);
-  static t_lbstat lib[1];
+  t_lbstat lib[1];
   unsigned long data = 4;
   void (*start)(t_lbstat*, void**);
   void (*end)(t_lbstat*, void**);
   start = dlsym(bundle, "start");
   end = dlsym(bundle, "end");
   (*start)(lib, (void**)data);
+  printf("CARDINAL::%d\n", lib->position.cardinal);
   (*end)(lib, (void**)data);
   dlclose(bundle); }
