@@ -15,6 +15,7 @@ void start(t_lbstat *lib, void **data)
   char path[1024];
   bzero(path, 1024);
   getcwd(path, 1024);
+  printf("PATH::%s\n", path);
   printf("A\n");
   Py_Initialize();
   PyRun_SimpleString
