@@ -2,14 +2,17 @@ import cffi
 import sys
 import traceback
 
+from neko import Sheet
+from neko import Cardinal
+
 ffi = cffi.FFI()
 ffi.cdef(file('neko.h').read())
 noGCDict = {}
 
 @ffi.callback("void (t_lbstat*, void**)")
 def start(x, y):
-  x.sheet = Bust
-  x.position.cardinal = LowerLeft
+  x.sheet = Sheet.Bust
+  x.position.cardinal = Cardinal.LowerLeft
   print(y)
 
 @ffi.callback("void (t_lbstat*, void**)")
