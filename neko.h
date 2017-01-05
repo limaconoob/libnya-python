@@ -128,6 +128,8 @@ typedef struct s_library_state {
 struct API {
   void (*start)(t_lbstat *x, void **y);
   void (*end)(t_lbstat *x, void **y);
+  char* (*dump_buffer)(char *buffer, int buffer_size);
+  int (*release_object)(char *obj);
 };
 
 void start(t_lbstat *lib, void **data);

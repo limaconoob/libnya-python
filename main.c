@@ -6,7 +6,7 @@
 
 int main(void)
 { void* bundle = dlopen("libnya-python.dylib", RTLD_LAZY);
-  t_lbstat lib[1];
+  static t_lbstat lib[1];
   unsigned long data = 4;
   void (*start)(t_lbstat*, void**);
   void (*end)(t_lbstat*, void**);

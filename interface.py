@@ -13,8 +13,8 @@ noGCDict = {}
 def start(x, y):
   print("Start")
   print("Pyt_LIB::", x)
-  x.sheet = 98
- ## x.position.cardinal = Cardinal.LowerLeft
+  x.sheet = Sheet.Bust
+  x.position.cardinal = Cardinal.LowerLeft
 
 @ffi.callback("void (t_lbstat*, void**)")
 def end(x, y):
