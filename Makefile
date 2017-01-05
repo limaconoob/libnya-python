@@ -1,5 +1,5 @@
 NAME := "nya"
-LIB := "libnya-python"
+LIB := "libnya-python.dylib"
 mkfile_path := $(abspath $(lastword $(MAKEFILE_LIST)))
 current_dir := $(notdir $(patsubst %/,%,$(dir $(mkfile_path))))
 
