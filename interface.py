@@ -11,13 +11,15 @@ noGCDict = {}
 
 @ffi.callback("void (t_lbstat*, void**)")
 def start(x, y):
-  x.sheet = Sheet.Bust
-  x.position.cardinal = Cardinal.LowerLeft
-  print(y)
+  print("Start")
+  for i in x:
+    print(i)
+ ## x.sheet = Sheet.Bust
+ ## x.position.cardinal = Cardinal.LowerLeft
 
 @ffi.callback("void (t_lbstat*, void**)")
 def end(x, y):
-  print(y)
+  print("End")
 
 def fill_api(ptr):
   global the_ffi
