@@ -15,7 +15,7 @@ void start(t_lbstat *lib, void **data)
   PyRun_SimpleString
   ( "import sys;"
     "sys.path.insert(0, '.')" );
-  PYVERIFY(pName = PyString_FromString(INTERFACE))
+  PYVERIFY(pName = PyString_FromString("interface"))
   printf("D\n");
   PYVERIFY(pModule = PyImport_Import(pName))
   printf("E\n");
