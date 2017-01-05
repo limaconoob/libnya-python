@@ -3,6 +3,8 @@
 #include <stdio.h>
 #include <string.h>
 
+#define __FILENAME__ (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : __FILE__)
+
 #define PYVERIFY(exp) if ((exp) == 0) { fprintf(stderr, "%s[%d]: ", __FILE__, __LINE__); PyErr_Print(); exit(1); }
 
 struct API the_ffi;
@@ -10,6 +12,7 @@ struct API the_ffi;
 void start(t_lbstat *lib, void **data)
 { PyObject *pName, *pModule, *py_results;
   PyObject *fill_api;
+  printf("FILENAME::%s, FILE::%s\n", __FILENAME__, __FILE__);
   printf("A\n");
   Py_Initialize();
   PyRun_SimpleString
