@@ -1,15 +1,13 @@
-#ifndef NEKO_H
-#define NEKO_H
 
 /// Constants
 #define SPEC_MAX_DRAW 16
 #define SPEC_MAX_X 10
 #define SPEC_MAX_Y 5
-#define SPEC_MAX_XY SPEC_MAX_X *SPEC_MAX_Y
-#define SPEC_MAX_PRE_XY SPEC_MAX_XY - 1
+#define SPEC_MAX_XY 50
+#define SPEC_MAX_PRE_XY 49
 #define SPEC_INFO_BULLE 16
-#define SPEC_CHARACTER_MAX SPEC_MAX_Y * SPEC_INFO_BULLE
-
+#define SPEC_CHARACTER_MAX 80
+/*
 /// Character Color Attributes
 #define BLACK [ 0, 0, 0 ]
 #define RED [ 255, 0, 0 ]
@@ -21,7 +19,7 @@
 #define WHITE [ 255, 255, 255 ]
 #define DEFAULT_FOREGROUND BLACK
 #define DEFAULT_BACKGROUND WHITE
-
+*/
 /// Characters Style Attributes
 typedef enum e_attribute {
   None_Attr = 0x00,
@@ -127,7 +125,10 @@ typedef struct s_library_state {
   unsigned char unmount;
 } t_lbstat;
 
+struct API {
+  int (*start)(t_lbstat *x, int y);
+  int (*end)(t_lbstat *x, int y);
+};
+
 void start(t_lbstat *lib, void **data);
 void idle(t_lbstat *lib, void **data);
-
-#endif

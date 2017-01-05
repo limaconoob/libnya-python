@@ -3,16 +3,16 @@ import sys
 import traceback
 
 ffi = cffi.FFI()
-ffi.cdef(file('interface.h').read())
+ffi.cdef(file('neko.h').read())
 noGCDict = {}
 
-@ffi.callback("int (int, int)")
+@ffi.callback("int (t_lbstat*, int)")
 def start(x, y):
-  return x + y
+  return y
 
-@ffi.callback("int (int, int)")
+@ffi.callback("int (t_lbstat*, int)")
 def end(x, y):
-  return x - y
+  return y
 
 def fill_api(ptr):
   global the_ffi

@@ -5,10 +5,11 @@
 
 int main(void)
 { void* bundle = dlopen("libss.so", RTLD_LAZY);
-  void (*start)();
-  void (*end)();
+  t_lbstat *lib;
+  void (*start)(t_lbstat*, void**);
+  void (*end)(t_lbstat*, void**);
   start = dlsym(bundle, "start");
   end = dlsym(bundle, "end");
-  (*start)();
-  (*end)();
+  (*start)(lib, (void**)lib);
+  (*end)(lib, (void**)lib);
   dlclose(bundle); }
