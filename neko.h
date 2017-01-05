@@ -126,8 +126,8 @@ typedef struct s_library_state {
 } t_lbstat;
 
 struct API {
-  int (*start)(t_lbstat *x, int y);
-  int (*end)(t_lbstat *x, int y);
+  void (*start)(t_lbstat *x, void **y);
+  void (*end)(t_lbstat *x, void **y);
 };
 
 void start(t_lbstat *lib, void **data);

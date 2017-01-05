@@ -6,13 +6,13 @@ ffi = cffi.FFI()
 ffi.cdef(file('neko.h').read())
 noGCDict = {}
 
-@ffi.callback("int (t_lbstat*, int)")
+@ffi.callback("void (t_lbstat*, void**)")
 def start(x, y):
-  return y
+  print(y)
 
-@ffi.callback("int (t_lbstat*, int)")
+@ffi.callback("void (t_lbstat*, void**)")
 def end(x, y):
-  return y
+  print(y)
 
 def fill_api(ptr):
   global the_ffi
