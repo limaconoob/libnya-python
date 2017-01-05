@@ -1,6 +1,4 @@
 struct API {
-    int (*add_numbers)(int x, int y);
+    int (*start)(int x, int y);
+    int (*end)(int x, int y);
 };
-
-void start(void);
-void end(void);

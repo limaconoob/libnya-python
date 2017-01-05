@@ -2,7 +2,6 @@
 #include "interface.h"
 #include "Python.h"
 #include <stdio.h>
-#define PYVERIFY(exp) if ((exp) == 0) { fprintf(stderr, "%s[%d]: ", __FILE__, __LINE__); PyErr_Print(); exit(1); }
 
 struct API the_ffi;
 
@@ -18,7 +17,8 @@ void start(void)
   Py_DECREF(pName);
   fill_api = PyObject_GetAttrString(pModule, "fill_api");
   py_results = PyObject_CallFunction(fill_api, "k", &the_ffi);
-  printf("12 + 5 = %i\n", the_ffi.add_numbers(12, 5)); }
+  printf("12 + 5 = %i\n", the_ffi.start(12, 5));
+  printf("12 - 5 = %i\n", the_ffi.end(12, 5)); }
 
 void end(void)
 { Py_Finalize(); }
