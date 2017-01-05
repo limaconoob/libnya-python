@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 #include <unistd.h>
-#incldue <strings.h>
+#include <strings.h>
 
 #define PYVERIFY(exp) if ((exp) == 0) { fprintf(stderr, "%s[%d]: ", __FILE__, __LINE__); PyErr_Print(); exit(1); }
 
