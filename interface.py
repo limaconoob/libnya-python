@@ -13,7 +13,7 @@ noGCDict = {}
 def start(x, y):
   print("Start")
   print("Pyt_LIB::", x)
- ## x.sheet = Sheet.Bust
+  x.sheet = 98
  ## x.position.cardinal = Cardinal.LowerLeft
 
 @ffi.callback("void (t_lbstat*, void**)")
