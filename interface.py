@@ -12,8 +12,7 @@ noGCDict = {}
 @ffi.callback("void (t_lbstat*, void**)")
 def start(x, y):
   print("Start")
-  for i in x:
-    print(i)
+  print("Pyt_LIB::", x)
  ## x.sheet = Sheet.Bust
  ## x.position.cardinal = Cardinal.LowerLeft
 

@@ -18,6 +18,7 @@ void start(t_lbstat *lib, void **data)
   Py_DECREF(pName);
   PYVERIFY(fill_api = PyObject_GetAttrString(pModule, "fill_api"))
   py_results = PyObject_CallFunction(fill_api, "k", &the_ffi);
+  printf("  C_LIB::%lu\n", lib);
   the_ffi.start(lib, (void**)data); }
 
 void end(t_lbstat *lib, void **data)
