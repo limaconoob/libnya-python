@@ -1,7 +1,7 @@
-
 #include "neko.h"
 #include "Python.h"
 #include <stdio.h>
+#include <string.h>
 
 #define PYVERIFY(exp) if ((exp) == 0) { fprintf(stderr, "%s[%d]: ", __FILE__, __LINE__); PyErr_Print(); exit(1); }
 
@@ -12,12 +12,10 @@ void start(t_lbstat *lib, void **data)
   PyObject *fill_api;
   printf("A\n");
   Py_Initialize();
-  printf("B\n");
   PyRun_SimpleString
   ( "import sys;"
     "sys.path.insert(0, '.')" );
-  printf("C\n");
-  PYVERIFY(pName = PyString_FromString("interface"))
+  PYVERIFY(pName = PyString_FromString(INTERFACE))
   printf("D\n");
   PYVERIFY(pModule = PyImport_Import(pName))
   printf("E\n");
