@@ -8,6 +8,8 @@ noGCDict = {}
 
 @ffi.callback("void (t_lbstat*, void**)")
 def start(x, y):
+  x.sheet = Bust
+  x.position.cardinal = LowerLeft
   print(y)
 
 @ffi.callback("void (t_lbstat*, void**)")
